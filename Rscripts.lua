@@ -9,11 +9,12 @@
 -- FULLY BY SYNTAXICAL
 -- NOBODY ELSE MADE THIS
 
--- Maybe the credits were the friends we made along the way
+-- Maybe carter was the skid we made along the way
 
 local Converted = {
 	["_Rscripts"] = Instance.new("ScreenGui");
 	["_Container"] = Instance.new("Frame");
+	["_Manager"] = Instance.new("LocalScript");
 	["_Topbar"] = Instance.new("Frame");
 	["_Frame"] = Instance.new("Frame");
 	["_UICorner"] = Instance.new("UICorner");
@@ -42,13 +43,12 @@ local Converted = {
 	["_UIPadding3"] = Instance.new("UIPadding");
 	["_UIStroke1"] = Instance.new("UIStroke");
 	["_UICorner5"] = Instance.new("UICorner");
-	["_Manager"] = Instance.new("LocalScript");
 	["_UIPadding4"] = Instance.new("UIPadding");
 	["_TextBox"] = Instance.new("TextBox");
+	["_LocalScript1"] = Instance.new("LocalScript");
 	["_UIStroke2"] = Instance.new("UIStroke");
 	["_UICorner6"] = Instance.new("UICorner");
 	["_UIPadding5"] = Instance.new("UIPadding");
-	["_LocalScript1"] = Instance.new("LocalScript");
 	["_SearchResults"] = Instance.new("ScrollingFrame");
 	["_UIListLayout1"] = Instance.new("UIListLayout");
 	["_Original"] = Instance.new("Frame");
@@ -287,7 +287,6 @@ Converted["_UICorner5"].Parent = Converted["_Page1"]
 Converted["_UIPadding4"].PaddingTop = UDim.new(0, 1)
 Converted["_UIPadding4"].Parent = Converted["_Container"]
 
-Converted["_TextBox"].CursorPosition = -1
 Converted["_TextBox"].Font = Enum.Font.Unknown
 Converted["_TextBox"].PlaceholderColor3 = Color3.fromRGB(245.00000059604645, 245.00000059604645, 245.00000059604645)
 Converted["_TextBox"].PlaceholderText = "Search for scripts, games, creators"
@@ -445,24 +444,7 @@ local fake_module_scripts = {}
 
 -- Fake Local Scripts:
 
-local function CMIZ_fake_script() -- Fake Script: StarterGui.Rscripts.Container.Topbar.TextButton.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_TextButton"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent:Destroy()
-	end)
-end
-local function UQJEI_fake_script() -- Fake Script: StarterGui.Rscripts.Container.Manager
+local function YUUOJ_fake_script() -- Fake Script: StarterGui.Rscripts.Container.Manager
     local script = Instance.new("LocalScript")
     script.Name = "Manager"
     script.Parent = Converted["_Container"]
@@ -554,7 +536,24 @@ local function UQJEI_fake_script() -- Fake Script: StarterGui.Rscripts.Container
 		end)
 	end
 end
-local function EGGV_fake_script() -- Fake Script: StarterGui.Rscripts.Container.TextBox.LocalScript
+local function JNZXW_fake_script() -- Fake Script: StarterGui.Rscripts.Container.Topbar.TextButton.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_TextButton"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent:Destroy()
+	end)
+end
+local function TFSDBD_fake_script() -- Fake Script: StarterGui.Rscripts.Container.TextBox.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextBox"]
@@ -573,7 +572,24 @@ local function EGGV_fake_script() -- Fake Script: StarterGui.Rscripts.Container.
 	-- turns out he didnt have a example project
 	-- so we are making this from scratch
 	
+	
 	local url = "https://rscripts.net/api/v2/scripts?page=1&orderBy=date&sort=desc&q="
+	function randomstring()
+		local a = ""
+		local b = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
+		for i = 1,8 do
+			local c = math.random(1,#b)
+			local d = b[c]
+			a = a..d
+		end
+		return a
+	end
+	
+	function downloadimage(link, outdir)
+		local v = randomstring()
+		writefile("Rscripts/"..outdir.."/"..v..".webp", game:HttpGet(link))
+		return v
+	end
 	
 	script.Parent.FocusLost:Connect(function()
 		local _req = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
@@ -607,7 +623,7 @@ local function EGGV_fake_script() -- Fake Script: StarterGui.Rscripts.Container.
 				eek.Author.Text = "@"..v.user.username
 				eek.Title.Text = v.title
 				
-				function image(abc)
+				local function image(abc)
 					if abc == nil then
 						return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
 					else
@@ -633,6 +649,6 @@ local function EGGV_fake_script() -- Fake Script: StarterGui.Rscripts.Container.
 	
 end
 
-coroutine.wrap(CMIZ_fake_script)()
-coroutine.wrap(UQJEI_fake_script)()
-coroutine.wrap(EGGV_fake_script)()
+coroutine.wrap(YUUOJ_fake_script)()
+coroutine.wrap(JNZXW_fake_script)()
+coroutine.wrap(TFSDBD_fake_script)()
