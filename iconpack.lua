@@ -1160,4 +1160,5 @@ return {
 	["pointer-off_result"] = "rbxassetid://115684988144080",
 	pointer_result = "rbxassetid://99553529773356",
 	popcorn_result = "rbxassetid://139574126979470",
+	house = "rbxassetid://131602790339290",
 }
