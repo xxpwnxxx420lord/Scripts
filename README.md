@@ -8,3 +8,4 @@ Hello Welcome to my script directory
 - [Icon pack (1k+ Icons)](https://github.com/xxpwnxxx420lord/Scripts/blob/main/iconpack.lua)
 - [Escape Tsunami for brainrots script](https://github.com/xxpwnxxx420lord/Scripts/blob/main/escapetsunamiforbrainrots.lua)
 - [Syn Icons](https://create.roblox.com/store/asset/117868479924873), [SynIcons source](https://github.com/xxpwnxxx420lord/Scripts/blob/main/SynIcons.rbxm) (Roblox Studio Plugin)
+- [Nutho](https://github.com/xxpwnxxx420lord/nutho), [Nuthformattor (luau formatter)](https://github.com/xxpwnxxx420lord/Scripts/blob/main/luauformattor.py), [Nuthscripts (its a rscripts GUI)](https://rscripts.net/script/nuthscripts-or-1-rscripts-gui-oFBb)
