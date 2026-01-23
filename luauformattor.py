@@ -13,17 +13,15 @@ def format(code):
         if stripped.startswith(("end", "until")):
             ident -= 1
         a.append(f"{ident_str * ident}{stripped}")
-        if stripped.startswith(("function", "if", "for", "while", "repeat", "do")) and not stripped.startswith("end"):
+        if stripped.startswith(("function", "if", "for", "while", "repeat", "do")) and not stripped.endswith("end"):
             ident += 1
 
     return "\n".join(a)
 
-with open("Exported.luau", "w") as file:
+with open("Exported.luau", "w", encoding="utf-8") as file:
     file.write(format(
         """
-        if game.Players.LocalPlayer.Name == "test" then
-            print("hi")
-        end
+
         """
     ))
 
