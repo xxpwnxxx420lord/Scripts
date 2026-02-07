@@ -10,3 +10,4 @@ Hello Welcome to my script directory
 - [Syn Icons](https://create.roblox.com/store/asset/117868479924873), [SynIcons source](https://github.com/xxpwnxxx420lord/Scripts/blob/main/SynIcons.rbxm) (Roblox Studio Plugin)
 - [Nutho](https://github.com/xxpwnxxx420lord/nutho), [Nuthformattor (luau formatter)](https://github.com/xxpwnxxx420lord/Scripts/blob/main/luauformattor.py), [Nuthscripts (its a rscripts GUI)](https://rscripts.net/script/nuthscripts-or-1-rscripts-gui-oFBb)
 - [UI Framework](https://github.com/xxpwnxxx420lord/Scripts/blob/main/framework.lua)
+- [spongebob Vencord theme](https://github.com/xxpwnxxx420lord/Scripts/blob/main/spongebob_Vencord.css)
