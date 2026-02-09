@@ -1,259 +1,81 @@
-module = {}
+local module = {}
 
-function module:Create({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('ScreenGui')
-    Instance.Name = Name
-    Instance.Parent = Parent
+local function createInstance(className: string, name : string, parent : Instance, properties : any)
+	local inst = Instance.new(className)
+	inst.Name = name
+	inst.Parent = parent
 
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
+	if properties then
+		for prop, value in pairs(properties) do
+			inst[prop] = value
+		end
+	end
 
-    return Instance
+	return inst
 end
 
-function module:Frame({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('Frame')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:Create(name: string, parent : Instance, properties : any)
+	return createInstance("ScreenGui", name, parent, properties)
 end
 
-function module:TextLabel({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('TextLabel')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:Frame(name: string, parent : Instance, properties : any)
+	return createInstance("Frame", name, parent, properties)
 end
 
-function module:TextButton({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('TextButton')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:TextLabel(name: string, parent : Instance, properties : any)
+	return createInstance("TextLabel", name, parent, properties)
 end
 
-function module:ImageLabel({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('ImageLabel')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:TextButton(name: string, parent : Instance, properties : any)
+	return createInstance("TextButton", name, parent, properties)
 end
 
-function module:ImageButton({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('ImageButton')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:ImageLabel(name: string, parent : Instance, properties : any)
+	return createInstance("ImageLabel", name, parent, properties)
 end
 
-function module:UICorner({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UICorner')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:ImageButton(name: string, parent : Instance, properties : any)
+	return createInstance("ImageButton", name, parent, properties)
 end
 
-function module:UIStroke({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UIStroke')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UICorner(name: string, parent : Instance, properties : any)
+	return createInstance("UICorner", name, parent, properties)
 end
 
-function module:UIGradient({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UIGradient')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UIStroke(name: string, parent : Instance, properties : any)
+	return createInstance("UIStroke", name, parent, properties)
 end
 
-function module:UIListLayout({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UIListLayout')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UIGradient(name: string, parent : Instance, properties : any)
+	return createInstance("UIGradient", name, parent, properties)
 end
 
-function module:UIGridLayout({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UIGridLayout')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UIListLayout(name: string, parent : Instance, properties : any)
+	return createInstance("UIListLayout", name, parent, properties)
 end
 
-function module:UIAspectRatioConstraint({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UIAspectRatioConstraint')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UIGridLayout(name: string, parent : Instance, properties : any)
+	return createInstance("UIGridLayout", name, parent, properties)
 end
 
-function module:UIpadding({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('UIPadding')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UIAspectRatioConstraint(name: string, parent : Instance, properties : any)
+	return createInstance("UIAspectRatioConstraint", name, parent, properties)
 end
 
-function module:ScrollingFrame({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('ScrollingFrame')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:UIPadding(name: string, parent : Instance, properties : any)
+	return createInstance("UIPadding", name, parent, properties)
 end
 
-function module:ViewportFrame({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('ViewportFrame')
-    Instance.Name = Name
-    Instance.Parent = Parent
-
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:ScrollingFrame(name: string, parent : Instance, properties : any)
+	return createInstance("ScrollingFrame", name, parent, properties)
 end
 
-function module:TextBox({
-    Name,
-    Parent,
-    Properties = {},
-})
-    local Instance = Instance.new('TextBox')
-    Instance.Name = Name
-    Instance.Parent = Parent
+function module:ViewportFrame(name: string, parent : Instance, properties : any)
+	return createInstance("ViewportFrame", name, parent, properties)
+end
 
-    for Property, Value in pairs(Properties) do
-        Instance[Property] = Value
-    end
-
-    return Instance
+function module:TextBox(name: string, parent : Instance, properties : any)
+	return createInstance("TextBox", name, parent, properties)
 end
 
 return module
