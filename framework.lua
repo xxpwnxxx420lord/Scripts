@@ -18,6 +18,10 @@ function module:Create(name: string, parent : Instance, properties : any)
 	return createInstance("ScreenGui", name, parent, properties)
 end
 
+function module:Close(screengui : ScreenGui)
+	screengui:Destroy()
+end
+
 function module:Frame(name: string, parent : Instance, properties : any)
 	return createInstance("Frame", name, parent, properties)
 end
